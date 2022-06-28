@@ -9,6 +9,10 @@ const users = [
   'username1',
   'юзерname',
   'user,name',
+  'user1name',
+  'user1n2ame',
+  'user1n1234ame',
+  'user12n34ame'
 ];
 
 test.each(users)('testing Validator', (i) => {

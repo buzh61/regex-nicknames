@@ -4,9 +4,15 @@ export default class Validator {
   }
 
   validateUsername() {
-    const validateUser = /^[^\d_-][a-z]*\d{0,3}[-_]*[a-z]*[^\d_-]$/i;
+    const validateNumbers = /\d{4,}/g
+    const validateSymbols = /^[a-zA-Z0-9-_]*/g
+    const validateString = /(^[0-9-_]|[0-9-_]$)/g
 
-    if (!validateUser.test(this.username)) {
+    if (validateNumbers.test(this.username)) {
+      return false;
+    } else if (validateSymbols.test(this.username)) {
+      return false;
+    } else if (validateString.test(this.username)) {
       return false;
     }
     return true;
